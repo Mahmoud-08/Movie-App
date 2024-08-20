@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    // Initialize the single-item slider with unique arrow classes
     $('.single-item').slick({
         prevArrow: '<button type="button" class="single-prev"><i class="fas fa-chevron-left"></i></button>',
         nextArrow: '<button type="button" class="single-next"><i class="fas fa-chevron-right"></i></button>'
@@ -7,7 +6,7 @@ $(document).ready(function(){
 
     $(document).ready(function(){
         $('.popular-slider').slick({
-            dots: false, // Disable dots
+            dots: false, 
             infinite: false,
             speed: 300,
             slidesToShow: 8,

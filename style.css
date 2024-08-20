@@ -16,7 +16,7 @@ nav {
 }
 
 .logo {
-    margin-right: auto; /* Moves the logo a bit more to the right */
+    margin-right: auto;
     font-weight: 520;
     margin-left: 100px;
     font-size: 20px;
@@ -24,7 +24,6 @@ nav {
 
 .logo span {
     font-size: 0.8rem;
-    font-weight: 0;
     opacity: 0.85;
 }
 
@@ -36,7 +35,7 @@ nav ul {
 }
 
 nav ul li {
-    margin: 0 2.5rem; /* Increases gap between the links */
+    margin: 0 2.5rem;
 }
 
 nav ul li a {
@@ -45,7 +44,7 @@ nav ul li a {
 }
 
 .login {
-    margin-left: auto; /* Moves the login section more to the left */
+    margin-left: auto;
     display: flex;
     align-items: center;
     font-size: 0.7rem;
@@ -54,70 +53,79 @@ nav ul li a {
 }
 
 .login-icon {
-    font-size: 14px; /* Size of the icon */
-    color: #ffffff;  /* Color of the icon */
-    text-decoration: none; /* Remove underline from the link */
+    font-size: 14px;
+    color: #ffffff;
+    text-decoration: none;
     padding: 10px;
 }
 
 .login-icon:hover {
-    color: #b3b3b3; /* Change color on hover */
+    color: #b3b3b3;
 }
 
 /* Responsive Styles */
 @media (max-width: 768px) {
     nav {
-        flex-direction: column; /* Stack elements vertically */
-        padding: 1rem;
+        flex-direction: column;
+        align-items: center; 
     }
 
     .logo {
-        margin-bottom: 1rem; /* Add space below the logo */
+        margin: 0;
         text-align: center;
+        margin-bottom: 1rem;
     }
 
     nav ul {
-        flex-direction: column; /* Stack the navigation links vertically */
-        align-items: center;
-        width: 100%;
+        flex-direction: column;
+        margin: 0;
     }
 
     nav ul li {
-        margin: 0.5rem 0; /* Reduce margin between the links */
+        margin: 0.5rem 0; 
     }
 
     .login {
-        margin-top: 1rem; /* Add space above the login section */
-        justify-content: center;
+        margin-top: 1rem; 
+        margin-right: 0;
     }
 }
 
 @media (max-width: 480px) {
     nav {
         padding: 0.5rem;
+        flex-direction: column;
     }
 
     .logo {
-        font-size: 18px; /* Reduce logo font size */
+        font-size: 18px;
+        margin-left: 0;
+        margin-bottom: 1rem;
+    }
+
+    nav ul {
+        margin: 0;
     }
 
     nav ul li {
-        margin: 0.3rem 0; /* Further reduce margin between links */
+        margin: 0.5rem 0;
     }
 
     .login {
         font-size: 0.6rem;
+        margin-top: 0.5rem;
+        margin-right: 0;
     }
 
     .login-icon {
-        font-size: 12px; /* Reduce icon size */
+        font-size: 12px;
         padding: 5px;
     }
 }
 
 .slider {
     position: relative;
-    margin-top: -1rem; /* Fixes the image being cut from the top */
+    margin-top: -1rem;
 }
 
 .slide {
@@ -154,10 +162,23 @@ nav ul li a {
     border-radius: 6px;
     border-style: solid;
     box-shadow: #212121;
-    /* background-color: #4CAF50; */
-    background-color: rgb(136, 85, 231);
+    background-color: rgba(136, 85, 231, 0.8);
     color: white;
     border: none;
+    cursor: pointer;
+}
+
+.single-prev,
+.single-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0;
+    z-index: 10;
+    color: white;
+    font-size: 24px;
     cursor: pointer;
 }
 
@@ -185,20 +206,7 @@ h2 {
     border-radius: 8px;
 }
 
-/* Single-item slider arrows */
-.single-prev,
-.single-next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    padding: 0;
-    z-index: 10;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-}
+
 
 .single-prev {
     left: 10px;
@@ -208,7 +216,7 @@ h2 {
     right: 10px;
 }
 
-/* Popular-slider arrows */
+
 .popular-prev,
 .popular-next {
     position: absolute;
@@ -223,62 +231,62 @@ h2 {
 }
 
 .popular-prev {
-    /* transform: translate(0px,-10px);  */
     left: -42px;
-    
 }
 
 .popular-next {
     right: -2px; 
-    
 }
 
 .popular-prev:hover,
 .popular-next:hover {
-    color: #ccc; /* Optional: Change color on hover */
+    color: #ccc;
 }
 
 .popular-next i,
 .popular-prev i {
-    font-size: 30px; /* Size of the arrow */
+    font-size: 30px; 
 }
 
 hr{
+    color: #333;
     margin-top: 50px;
-    width: 95%;
+    margin-bottom: 20px;
+    width: 80%;
 }
 
 .movie-grid {
-    min-height: 150vh;
+    min-height: 140vh;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Adjusted minmax to control column width */
-    gap: 20px; /* Adjust gap size between posters */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
+    gap: 20px; 
     background-color: #1a1a1a;
-    padding: 20px;
     padding-left: 50px;
 }
 
 .movie-grid h1 {
     grid-column: 1 / -1;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     color: white;
     font-size: 28px;
     font-weight: 600;
 }
 
 .movie-card {
-    width: 260px; /* Fixed width */
-    aspect-ratio: 2 / 3; /* Maintain aspect ratio */
+    width: 260px;
+    aspect-ratio: 2 / 3;
     position: relative;
     overflow: hidden;
-    background-color: #000; /* Fallback color */
+    background-color: #000;
+    border-radius: 5px;
 }
 
 .movie-card img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensure the image covers the entire card */
+    object-fit: cover;
     display: block;
+    transition: transform 0.3s ease-out;
 }
 
 .movie-info {
@@ -287,9 +295,21 @@ hr{
     left: 0;
     right: 0;
     padding: 10px;
-    background: rgba(0, 0, 0, 0.7); /* Slightly darkened background for better readability */
+    background: rgba(0, 0, 0, 0.7);
     color: white;
     text-align: left;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.movie-card:hover .movie-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.movie-card:hover img {
+    transform: scale(1.1);
 }
 
 .movie-title {
@@ -302,10 +322,20 @@ hr{
     font-size: 14px;
 }
 
+.movie-date {
+    margin-bottom: 4px;
+}
+
 .language-options {
     position: absolute;
     bottom: 10px;
     right: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+.movie-card:hover .language-options {
+    opacity: 1;
 }
 
 .language-option {
@@ -316,6 +346,19 @@ hr{
     border-radius: 3px;
     margin-left: 5px;
     font-size: 12px;
+}
+
+
+.movie-rating.R {
+    color: #FF6B6B; 
+}
+
+.movie-rating.PG {
+    color: #4CAF50; 
+}
+
+.movie-rating.PG-13 {
+    color: #42A5F5;
 }
 
 footer {
