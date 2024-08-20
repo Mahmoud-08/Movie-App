@@ -1,0 +1,392 @@
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #222;
+    color: white;
+    min-height: 90px;
+}
+
+.logo {
+    margin-right: auto; /* Moves the logo a bit more to the right */
+    font-weight: 520;
+    margin-left: 100px;
+    font-size: 20px;
+}
+
+.logo span {
+    font-size: 0.8rem;
+    font-weight: 0;
+    opacity: 0.85;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav ul li {
+    margin: 0 2.5rem; /* Increases gap between the links */
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.login {
+    margin-left: auto; /* Moves the login section more to the left */
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
+    font-weight: 300;
+    margin-right: 120px;
+}
+
+.login-icon {
+    font-size: 14px; /* Size of the icon */
+    color: #ffffff;  /* Color of the icon */
+    text-decoration: none; /* Remove underline from the link */
+    padding: 10px;
+}
+
+.login-icon:hover {
+    color: #b3b3b3; /* Change color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Stack elements vertically */
+        padding: 1rem;
+    }
+
+    .logo {
+        margin-bottom: 1rem; /* Add space below the logo */
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack the navigation links vertically */
+        align-items: center;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0; /* Reduce margin between the links */
+    }
+
+    .login {
+        margin-top: 1rem; /* Add space above the login section */
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    nav {
+        padding: 0.5rem;
+    }
+
+    .logo {
+        font-size: 18px; /* Reduce logo font size */
+    }
+
+    nav ul li {
+        margin: 0.3rem 0; /* Further reduce margin between links */
+    }
+
+    .login {
+        font-size: 0.6rem;
+    }
+
+    .login-icon {
+        font-size: 12px; /* Reduce icon size */
+        padding: 5px;
+    }
+}
+
+.slider {
+    position: relative;
+    margin-top: -1rem; /* Fixes the image being cut from the top */
+}
+
+.slide {
+    position: relative;
+}
+
+.slide img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+}
+
+.slide-content h2 {
+    font-size: 3.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.slide-content button {
+    width: 150px;
+    height: 52px;
+    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+    font-weight: 500;
+    border-color: black;
+    border-radius: 6px;
+    border-style: solid;
+    box-shadow: #212121;
+    /* background-color: #4CAF50; */
+    background-color: rgb(136, 85, 231);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.popular-section {
+    background-color: #1a1a1a;
+    padding: 20px;
+    padding-left: 50px;
+}
+
+h2 {
+    color: white;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.popular-slider .slick-slide {
+    margin: 0 5px;
+}
+
+.popular-slider img {
+    width: 70%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Single-item slider arrows */
+.single-prev,
+.single-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    padding: 0;
+    z-index: 10;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.single-prev {
+    left: 10px;
+}
+
+.single-next {
+    right: 10px;
+}
+
+/* Popular-slider arrows */
+.popular-prev,
+.popular-next {
+    position: absolute;
+    top: 50%;
+    transform: translatey(-10px);
+    background: none;
+    border: none;
+    z-index: 10;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.popular-prev {
+    /* transform: translate(0px,-10px);  */
+    left: -42px;
+    
+}
+
+.popular-next {
+    right: -2px; 
+    
+}
+
+.popular-prev:hover,
+.popular-next:hover {
+    color: #ccc; /* Optional: Change color on hover */
+}
+
+.popular-next i,
+.popular-prev i {
+    font-size: 30px; /* Size of the arrow */
+}
+
+hr{
+    margin-top: 50px;
+    width: 95%;
+}
+
+.movie-grid {
+    min-height: 150vh;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Adjusted minmax to control column width */
+    gap: 20px; /* Adjust gap size between posters */
+    background-color: #1a1a1a;
+    padding: 20px;
+    padding-left: 50px;
+}
+
+.movie-grid h1 {
+    grid-column: 1 / -1;
+    margin-bottom: 20px;
+    color: white;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.movie-card {
+    width: 260px; /* Fixed width */
+    aspect-ratio: 2 / 3; /* Maintain aspect ratio */
+    position: relative;
+    overflow: hidden;
+    background-color: #000; /* Fallback color */
+}
+
+.movie-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire card */
+    display: block;
+}
+
+.movie-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7); /* Slightly darkened background for better readability */
+    color: white;
+    text-align: left;
+}
+
+.movie-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.movie-date, .movie-rating {
+    font-size: 14px;
+}
+
+.language-options {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.language-option {
+    display: inline-block;
+    background-color: rgba(128, 128, 128, 0.7);
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+footer {
+    background-color: #151515;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+    font-family: Arial, sans-serif;
+
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.footer-section {
+    flex: 1;
+    margin: 10px 20px;
+    
+}
+
+.footer-section h4 {
+    margin-bottom: 42px;
+    font-size: 15px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 24px;
+}
+
+.footer-section ul li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer-section ul li a:hover {
+    color: #ffffff;
+}
+
+.contact-section .social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: #b3b3b3;
+    font-size: 20px;
+}
+
+.social-icons a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    margin-top: 40px;
+    border-top: 1px solid #333; 
+    border-top-width: 50%;
+    padding-top: 20px; 
+    font-size: 14px;
+    color: #7a7a7a;
+}
